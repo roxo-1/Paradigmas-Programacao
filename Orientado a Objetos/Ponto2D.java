@@ -25,14 +25,19 @@ public class Ponto2D {
     }
     // Multiplicar ambas as coordenadas de um ponto 
     public Ponto2D scale(double s){
-        
-        return null;
+        this.x = this.x * s;
+        this.y = this.y * s;
+        return this;
     
     }
     //Calcular o coeficiente angular de uma reta que passe pelos dois pontos
     public double gradient(Ponto2D outro){
-
-        return 0.0;
+        if(this.x == outro.x){
+            return 0.0;
+            // System.out.println("Erro");
+            // throw new ArithmeticException("Erro: Divisão por zero na inclinação da reta (reta vertical).");
+        }
+        return (outro.y - this.y)/(outro.x - this.x);
     
     }
     // calcular a distância de Euclediana entre dois pontos;
