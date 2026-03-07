@@ -36,16 +36,27 @@ double ponto2D_get_y(Ponto2D *p) {
 Ponto2D *ponto2D_add(Ponto2D *p1, Ponto2D *p2) {
     // TODO: Implemente aqui a solucao para operacao somar dois pontos 
     // (e obter um terceiro);
-    return NULL;
+    Ponto2D *p3 = ponto2D_new(0, 0);
+    p3->x = p1->x + p2->x;
+    p3->y = p1->y + p2->y;
+    return p3;
 }
 
 Ponto2D *ponto2D_scale(Ponto2D *p, double s) {
-     // TODO: Implemente aqui a solucao para operacao scale
-    return NULL;
+    // TODO: Implemente aqui a solucao para operacao scale
+    // Multiplicar ambas as coordenadas de um ponto (recebendo um novo em troca) 
+    p->x = p->x * s;
+    p->y = p ->y * s;
+    return p;
 }
 
 double ponto2D_gradient(Ponto2D *p1, Ponto2D *p2) {
      // TODO: Implemente aqui a solucao para operacao Calcular o coeficiente angular 
      // de uma reta que passe pelos dois pontos;
-    return 0;
+    if(p2->x == p1->x){ 
+        printf("não é possível");
+        return 0;
+    }
+    double m = ((p2->y) - (p1->y))/((p2->x) - (p1->x));
+    return m;
 }
