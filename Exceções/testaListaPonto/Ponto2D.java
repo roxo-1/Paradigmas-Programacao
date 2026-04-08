@@ -19,20 +19,21 @@ public class Ponto2D {
     }
     //Somar dois pontos e obtem um terceiro;
     public Ponto2D add(Ponto2D outro){
-
         return new Ponto2D(this.x + outro.x,this.y+outro.y);
     }
     // Multiplicar ambas as coordenadas de um ponto 
     public Ponto2D scale(double s){
-        
-        return null;
+        this.x = x * s;
+        this.y = y * s;
+        return this;
     
     }
     //Calcular o coeficiente angular de uma reta que passe pelos dois pontos
     public double gradient(Ponto2D outro){
-
-        return 0.0;
-    
+        if(this.x == outro.x || this.y == 0 || outro.y==0){
+            return 0.0;
+        }
+        return (this.y - outro.y)/(this.x - outro.x);
     }
     // Calcular distância Euclidiana
     public double distance(Ponto2D outro){

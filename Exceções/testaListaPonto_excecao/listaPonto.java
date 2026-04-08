@@ -15,8 +15,31 @@ public class listaPonto{
         return this.qtd;
     }
     public Ponto2D getPonto(int i){
-        return null;
+        if(i>qtd || i<0){
+            throw new IndexOutOfBoundsException("Não dá");
+        }
+        return pontos[i];
     } 
+    public boolean equals(Object obj){
+        Ponto2D outro = (Ponto2D) obj;
+        return Double.compare(this.x, outro.getX()) == 0 && Double.compare(this.y, outro.getY()) == 0;   
+    }
+
+    public int busca(Ponto2D p){
+        for(int i = 0; i<qtd; i++){
+            if(pontos.getPonto(i).equals(p)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Ponto2D remove(int i){
+        if(i>qtd || i<0){
+            throw new IndexOutOfBoundsException("Não dá");
+        }
+       return pontos.remove(i);
+    }
 
 
 }
