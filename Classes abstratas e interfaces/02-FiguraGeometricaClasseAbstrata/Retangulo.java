@@ -10,8 +10,7 @@ public class Retangulo extends FiguraGeometrica {
    @Override
    public boolean equals(Object o) {
       Retangulo r = (Retangulo) o;
-      return super.equals(o) && this.base==r.base && 
-             this.altura== r.altura;
+      return super.equals(o) && this.base==r.base && this.altura== r.altura;
    }
    public double area() {
       return this.base * this.altura;  
