@@ -16,6 +16,6 @@ public class Circulo{
 
    // funcao que verifica se um Ponto2D está contido no Circulo
    public boolean contains(Ponto2D p){
-      return this.centro.distance(p) <= this raio;
+      return this.centro.distance(p) <= this.raio;
    }
 }

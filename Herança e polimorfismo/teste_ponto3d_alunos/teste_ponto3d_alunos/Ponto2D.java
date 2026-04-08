@@ -21,9 +21,15 @@ public class Ponto2D {
     // Calcular distância Euclidiana
     public double distance(Ponto2D outro){
         return Math.sqrt(Math.pow((this.x - outro.x),2)+Math.pow((this.y - outro.y),2));
-
     }
-    
+    public boolean equals(Object obj){
+        Ponto2D outro = (Ponto2D) obj;
+        return Double.compare(this.x, outro.getX()) == 0 && Double.compare(this.y, outro.getY()) == 0;   
+    }
+    public String toString() {
+        // O teste exige "(10.0,20.0)" -> Sem espaços!
+        return "(" + this.x + "," + this.y + ")";
+    }
        
 }
 
